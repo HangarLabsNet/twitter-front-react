@@ -1,8 +1,14 @@
 # Twitter - React (clone)
 
-## Description
+## Descripción
 
-This is a clone of the Twitter web app, built with React.
+Este es un clon de la aplicación web de Twitter, construida con React.
+
+## Normas para trabajar en este proyecto
+
+- Todas las pull requests deben hacerse desde la rama `develop`.
+- Al crear su nuevo branch localmente debe seguir el siguiente formato: `WEB-[ticket-number]_title_of_ticket`.
+- Deben asignar al menos 2 reviewers a su pull request.
 
 ## Clone
 
