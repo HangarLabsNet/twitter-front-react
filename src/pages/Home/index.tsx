@@ -1,7 +1,8 @@
-const Home = () => {
+export default function HomePage() {
   return (
-    <div>Home Twitter</div>
-  )
+    <div>
+      <h2>Home Twitter</h2>
+      <a href="/login">Login</a>
+    </div>
+  );
 }
-
-export default Home
