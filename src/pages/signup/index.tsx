@@ -1,7 +1,10 @@
-import { Footer, SocialButton } from "./components";
+import { Footer, Modal, SocialButton } from "./components";
 import { logo, logoGray } from "../../assets";
+import { useState } from "react";
 
 export default function SignupPage() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <div className="flex justify-center md:h-[95vh]">
@@ -20,7 +23,7 @@ export default function SignupPage() {
             <div className="mt-4 flex flex-col gap-5">
               <SocialButton text="Sign up with Google" src="google" />
               <SocialButton text="Sign up with Apple" src="apple" />
-              <SocialButton text="Sign up with phone or email" />
+              <SocialButton text="Sign up with phone or email" setShowModal={setShowModal} />
             </div>
             <div className="mt-15">
               <p className="font-roboto mt-5">
@@ -44,6 +47,7 @@ export default function SignupPage() {
         </div>
       </div>
       <Footer />
+      <Modal isInvisible={showModal} onClose={()=> setShowModal(false)}/>
     </>
   );
 }
