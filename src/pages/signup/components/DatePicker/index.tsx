@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { getMonthName, daysInMonth } from "../../../../utils/datePicker";
 
 export default function DatePicker () {
   const [selectedMonth, setSelectedMonth] = useState<number | null>(null);
@@ -6,31 +7,6 @@ export default function DatePicker () {
     new Date().getFullYear()
   );
 
-  const getMonthName = (month: number) => {
-    const months = [
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre",
-    ];
-    return months[month - 1];
-  };
-
-  const daysInMonth = (month: number, year: number) => {
-    if (month === 2) {
-      return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
-    }
-    const monthsWith31Days = [1, 3, 5, 7, 8, 10, 12];
-    return monthsWith31Days.includes(month) ? 31 : 30;
-  };
 
   const generateOptions = (
     start: number,

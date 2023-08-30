@@ -5,6 +5,10 @@ import { useState } from "react";
 export default function SignupPage() {
   const [showModal, setShowModal] = useState(false);
 
+  const changeModal = () => {
+    return setShowModal(false)
+  }
+
   return (
     <>
       <div className="flex justify-center md:h-[95vh]">
@@ -47,7 +51,7 @@ export default function SignupPage() {
         </div>
       </div>
       <Footer />
-      <Modal isInvisible={showModal} onClose={()=> setShowModal(false)}/>
+      <Modal isInvisible={showModal} onClose={changeModal}/>
     </>
   );
 }
