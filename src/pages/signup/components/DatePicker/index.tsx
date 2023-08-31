@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { getMonthName, daysInMonth } from "../../../../utils/datePicker";
 
-export default function DatePicker () {
+export default function DatePicker() {
   const [selectedMonth, setSelectedMonth] = useState<number | null>(null);
   const [selectedYear, setSelectedYear] = useState<number>(
     new Date().getFullYear()
   );
-
 
   const generateOptions = (
     start: number,
@@ -50,7 +49,7 @@ export default function DatePicker () {
           <option value="" disabled selected>
             Día
           </option>
-          {selectedMonth !== null &&
+          {selectedMonth &&
             generateOptions(
               1,
               daysInMonth(selectedMonth, selectedYear),
@@ -76,4 +75,3 @@ export default function DatePicker () {
     </div>
   );
 }
-

@@ -1,11 +1,15 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import { NavBar } from "./components";
 
 const Layout = () => {
   return (
-    <div>
-      <h1>Inicio de Layout</h1>
+    <div className="flex">
+      <div className="hidden md:block md:w-[15%]">
+        <NavBar />
+      </div>
+      <div className="flex-1 border-red-600">
         <Outlet />
-      <h2>Fin del Layout</h2>
+      </div>
     </div>
   );
 };
