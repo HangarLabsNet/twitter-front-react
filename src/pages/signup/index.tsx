@@ -1,5 +1,6 @@
 import { Footer, SocialButton } from "./components";
 import { logo, logoGray } from "../../assets";
+import SignupModal from "./components/SignUpModal";
 
 export default function SignupPage() {
   return (
@@ -20,7 +21,7 @@ export default function SignupPage() {
             <div className="mt-4 flex flex-col gap-5">
               <SocialButton text="Sign up with Google" src="google" />
               <SocialButton text="Sign up with Apple" src="apple" />
-              <SocialButton text="Sign up with phone or email" />
+              <SignupModal />
             </div>
             <div className="mt-15">
               <p className="font-roboto mt-5">
