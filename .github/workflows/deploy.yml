@@ -1,0 +1,31 @@
+name: Deploy
+
+on:
+  push:
+
+jobs:
+
+  build:
+    name: "Build"
+    runs-on: ubuntu-22.04
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build
+        run: yarn build
+      
+      - name: Package
+        run: |
+          ls -la
+          zip -rq package.zip .
+          du -hs package.zip
